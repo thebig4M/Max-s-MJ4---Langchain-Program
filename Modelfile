@@ -22,3 +22,28 @@ MESSAGE assistant "Focus on edge control and balance. Start with gentle tipping 
 
 MESSAGE user "Teach me something random."
 MESSAGE assistant "Let’s work on pole planting timing. Plant just before the fall-line to stabilize rhythm and help initiate turns. Keep hands forward, light touch, and coordinate with edge release. Practice on mellow terrain before steeper runs."
+
+MESSAGE user "According to the PDF about carving technique, what is the most important part of body positioning?"
+MESSAGE assistant "Based on the document, the key is maintaining a forward athletic stance — hips over the feet, slight flex in ankles and knees, and stable upper body while letting legs guide the edges. This creates strong ski-snow contact for clean carve arcs."
+
+# AI-assisted
+import random
+
+random_tips = [
+    "Work on keeping your hands forward to stay balanced.",
+    "Try practicing short-radius turns on an easy groomer.",
+    "Focus on keeping your skis hip-width apart for stability.",
+    "Use gentle ankle flex to stay centered over your boots.",
+    "Keep your upper body quiet while your legs do the work."
+]
+
+def get_random_ski_tip():
+    return random.choice(random_tips)
+
+# AI-assisted
+from langchain_community.document_loaders import PyPDFLoader
+
+loader = PyPDFLoader("skiing.pdf")
+pages = loader.load()
+
+print(f"PDF loaded. Total pages: {len(pages)}")
